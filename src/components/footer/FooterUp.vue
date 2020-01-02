@@ -21,12 +21,12 @@
             </ul>
         </div>
 
-        <div class="footerup-right left" style="margin-left:90px;">
-            <ul>
+        <div class="footerup-right" style="margin-left:90px;">
+            <ul class="attention">
                 <h1 class="title">关注我们</h1>
-                <li class="wechat"></li>
-                <li class="newlang"></li>
-                <li class="download">下载APP</li>
+                <li class="attention-wechat"></li>
+                <li class="attention-newlang"></li>
+                <li class="attention-download">下载APP</li>
             </ul>
         </div>
     </div>
@@ -68,73 +68,60 @@ export default {
         li:hover {
             color: white;
         }
-    }
-    .wechat {
-        width: 40px;
-        height: 40px;
-        margin-right: 20px;
-        background-color: #44c996;
-        float: left;
-        border-radius: 50%;
-        transition-duration: 0.8s;
-        position: relative;
-    }
-    .wechat:before {
-		content: '';
-		position: absolute;
-		background: url('../../../public/wx.png') no-repeat;
-		width:25px;
-		height: 25px;
-		background-size: 25px;
-		left: 7px;
-        top: 8px;
-	}
-    .more:hover {
-        color: #f7b424
-    }
-    .wechat:hover {
-        background-color: #5de6b1;
-    }
-    .newlang {
-        width: 40px;
-        height: 40px;
-        background-color: #fd5562;
-        float: left;
-        border-radius: 50%;
-        margin-right: 20px;
-        transition-duration: 0.8s;
-        position: relative;
-    }
-    .newlang:before {
-		content: '';
-		position: absolute;
-		background: url('../../../public/wb.png') no-repeat;
-		width:25px;
-		height: 25px;
-		background-size: 25px;
-		left: 7px;
-        top: 8px;
-	}
-    .newlang:hover {
-        background: #fe6e79;
-    }
-    .download {
-        width: 130px;
-        height: 40px;
-        float: left;
-        background-color: #f7b244;
-        border-radius: 20px;
-        margin-right: 20px;
-        -webkit-transition-duration: 0.4s; /* Safari */
-        transition-duration: 0.8s;
-        color: white;
-        line-height: 40px !important;
-        text-align: center;
-        font-size: 14px;
-    }
-    .download:hover {
-        background-color: #f6c06a;
-        font-size: 16px;
+        .attention {
+            li {
+                height: 40px;
+                float: left;
+                -webkit-transition-duration: 0.4s; /* Safari */
+                transition-duration: 0.8s;
+                position: relative;
+                margin-right: 20px;
+            }
+            &-wechat {
+                width: 40px;
+                background-color: #44c996;
+                border-radius: 50%;
+            }
+            &-wechat:hover{
+                background-color: #5de6b1;
+            }
+            &-wechat:before {
+        		background: url('../../../public/wx.png') no-repeat;
+            }
+            &-newlang {
+                width: 40px;
+                background-color: #fd5562;
+                border-radius: 50%;
+            }
+            &-newlang:hover {
+                background: #fe6e79;
+            }
+            &-newlang:before {
+        		background: url('../../../public/wb.png') no-repeat;
+            }
+            &-download {
+                width: 130px;
+                background-color: #f7b244;
+                border-radius: 20px;
+                color: white;
+                line-height: 40px !important;
+                text-align: center;
+                font-size: 14px;
+            }
+            &-download:hover {
+                background-color: #f6c06a;
+                font-size: 16px;
+            }
+            li:before {
+        		content: '';
+        		position: absolute;
+                width:25px;
+		        height: 25px;
+		        background-size: 25px;
+                left: 7px;
+                top: 8px;
+            }
+        }
     }
 }   
 </style>
