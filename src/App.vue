@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    	<Heading />
-		<Bodying />
+    	<Header />
+		<Body />
 		<Footer />
     <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
@@ -12,15 +12,15 @@
 </template>
 
 <script>
-import Heading from './components/Heading.vue'
-import Bodying from './components/Bodying.vue'
+import Header from './components/Header.vue'
+import Body from './components/Body.vue'
 import Footer from './components/Footer.vue'
 
 export default {
   	name: 'app',
   	components: {
-		Heading,
-		Bodying,
+		Header,
+		Body,
 		Footer
   	}
 }
