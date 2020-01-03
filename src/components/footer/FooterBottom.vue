@@ -30,7 +30,6 @@ export default {
     height: 86px;
     margin: 0 auto;
     line-height: 30px;
-    margin-top: 10px;
     .left {
         float: left;
         .line {
