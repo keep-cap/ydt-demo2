@@ -2,12 +2,12 @@
     <div class="tab">
         <div class="tab-message">
             <ul class="tab-message-list">
-                <li class="first">首页</li>
-                <li class="mate">看图</li>
-                <li class="mate">全屋记</li>
-                <li class="mate">文章</li>
-                <li class="mate">众测</li>
-                <li class="last">下载客户端</li>
+                <li v-for="(item,index) in tabTitle"
+                    :key="index"
+                    class="mate" 
+                    :class="{ first:changeColor == index}"
+                    @click="change(index)">{{item.name}}</li>
+                <li class="last">下载客户端</li> 
             </ul>
         </div>
 	</div>
@@ -15,7 +15,27 @@
 
 <script>
 export default {
-    name:'TabMessage'
+    name: 'TabMessage',
+    data() {
+        return {
+            tabTitle: [
+                { 'name': '首页',src: '' },
+                { 'name': '看图', src: 'photo'},
+                { 'name': '全屋记', src: 'case'},
+                { 'name': '文章', src: 'guide'},
+                { 'name': '众测', src: 'mtest'}
+            ],
+            changeColor: 0
+        }
+    },
+    methods:{
+        change(index){
+            this.changeColor = index;
+            this.$router.push(`/${this.tabTitle[index].src}`);
+            // console.log(this.tabTitle[index].src)
+            //
+        },
+    }
 }
 </script>
 
@@ -37,10 +57,14 @@ export default {
                 li {
                     cursor: pointer;
                     float: left;
-                    line-height: 40px;
+                    line-height: 41px;
                     padding: 0 38px;
                     margin-right: 3px;
                     font-size: 13px;
+                }
+                .mate:hover{
+                    height: 41px;
+                    border-bottom: 4px solid #f7b244;
                 }
                 .last {
                     position: relative;
